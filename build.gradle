@@ -14,3 +14,13 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.2")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.6.2")
 }
+task google_tests (type: Test) {
+    useJUnitPlatform {
+        includeTags 'google_tests'
+    }
+}
+task yandex_tests (type: Test) {
+    useJUnitPlatform {
+        includeTags 'yandex_tests'
+    }
+}

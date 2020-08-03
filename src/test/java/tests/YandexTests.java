@@ -1,5 +1,6 @@
 package tests;
 
+import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
@@ -13,13 +14,15 @@ class YandexTests {
     @Test
     void selenideSearchYandexTest() {
 
+        Configuration.holdBrowserOpen =true;
+
         // Открыть google
         open("https://ya.ru");
 
         // Ввести Selenide в поиск
-        $(byName("q")).setValue("Selenide").pressEnter();
+        $(byName("text")).setValue("аквафор").pressEnter();
 
         // Проверить, что Selenide появился в результатах поиска
-        $("html").shouldHave(text("ru.selenide.org"));
+        $("html").shouldHave(text("Фирменный магазин АКВАФОР"));
     }
 }

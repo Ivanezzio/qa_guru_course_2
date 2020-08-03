@@ -1,16 +1,12 @@
 plugins {
     id 'java'
 }
-
 group 'org.example'
 version '1.0-SNAPSHOT'
-
 repositories {
     mavenCentral()
 }
-
 compileTestJava {options.encoding='UTF-8'};
-
 dependencies {
     testImplementation 'com.codeborne:selenide:5.13.0'
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.2")
@@ -26,3 +22,9 @@ task yandex_tests (type: Test) {
         includeTags 'yandex_tests'
     }
 }
+task google_test_lesson2 (type: Test) {
+    useJUnitPlatform { 'google_Test_Lesson2' }
+};
+task google_test_l2t2 (type: Test) {
+    useJUnitPlatform { 'google_Test_l2t2' }
+};

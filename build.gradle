@@ -1,30 +1,50 @@
 plugins {
     id 'java'
 }
+
 group 'org.example'
 version '1.0-SNAPSHOT'
+
 repositories {
     mavenCentral()
 }
-compileTestJava {options.encoding='UTF-8'};
+
+compileTestJava {
+    options.encoding='UTF-8'
+}
+
 dependencies {
     testImplementation 'com.codeborne:selenide:5.13.0'
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.2")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.6.2")
 }
+
 task google_tests (type: Test) {
     useJUnitPlatform {
         includeTags 'google_tests'
     }
 }
+
 task yandex_tests (type: Test) {
     useJUnitPlatform {
         includeTags 'yandex_tests'
     }
 }
+
 task google_test_lesson2 (type: Test) {
-    useJUnitPlatform { 'google_Test_Lesson2' }
-};
+    useJUnitPlatform {
+        includeTags 'google_Test_Lesson2'
+    }
+}
+
 task google_test_l2t2 (type: Test) {
-    useJUnitPlatform { 'google_Test_l2t2' }
-};
+    useJUnitPlatform {
+        includeTags 'google_Test_l2t2'
+    }
+}
+
+task l2t3 (type: Test) {
+    useJUnitPlatform {
+        includeTags 'l2t3'
+    }
+}

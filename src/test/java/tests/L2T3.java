@@ -17,8 +17,7 @@ public class L2T3 {
 
         open("https://ya.ru");
         $(byName("text")).setValue("столетие ситроен").pressEnter();
-        $("html").shouldHave(text("drive2"));
-
+        $("html").shouldHave(text("Фестиваль в честь столетия марки Citroёn"));
 
     }
 
